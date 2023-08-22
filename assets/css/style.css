@@ -1,5 +1,476 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap');
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
+
+:root {
+    --fontBauh: "Bauhaus 93 V1", sans-serif;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    background-color: #fff;
+    background: url(../images/side-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    transition: all 0.4s ease-in-out;
+}
+
+.side-menu::before {
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 300px;
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.side-menu ul {
+    position: relative;
+    text-align: left;
+}
+
+.side-menu ul li {
+    position: relative;
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+.side-menu ul li a {
+    text-decoration: none;
+    font-size: 20px;
+    color: #467b63;
+}
+
+.banner {
+    overflow: hidden;
+    position: relative;
+    height: 100vh;
+    right: 0;
+    width: 100%;
+    background: url(../images/bg.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    filter: brightness(105%);
+    transition: all 0.5s ease-in-out;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.banner.active {
+    right: 300px;
+}
+
+.banner::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.banner .nav {
+    z-index: 1000;
+    padding: 0 0 0 2.5em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 12%;
+    width: 94%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.banner .nav::before {
+    content: '';
+    top: 100%;
+    left: 0;
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    background: #fff;
+    opacity: 0.6;
+}
+
+.banner .nav .logo {
+    margin-left: 5em;
+    text-align: center;
+}
+
+.banner .nav .logo a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 2.5em;
+    font-weight: 600; 
+    letter-spacing: 2px;
+    font-family: var(--fontBauh);
+}
+
+.banner .nav ul li {
+    display: inline-block;
+    position: relative;
+    list-style: none;
+    margin-right: 3em;
+}
+
+.banner .nav ul li a {
+    text-decoration: none;
+    font-size: 1.1em;
+    color: #fff;
+    letter-spacing: 2px;
+}
+
+.banner .nav ul li a::after {
+    position: absolute;
+    content: '';
+    height: 2px;
+    width: 0;
+    top: 120%;
+    left: 0;
+    background: #fff;
+    border-radius: 50px;
+    visibility: hidden;
+    transition: all 0.5s ease-in-out;
+}
+
+.banner .nav ul li a:hover::after {
+    visibility: visible;
+    width: 100%;
+}
+
+.banner .title {
+    z-index: 10;
+    transform: translateY(-20%);
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.banner .title h1 {
+    color: #fff;
+    font-size: 8em;
+    letter-spacing: 5px;
+    font-weight: 100;
+    font-family: var(--fontBauh);
+}
+
+.banner .title p {
+    color: #fff;
+    font-size: 2em;
+    letter-spacing: 2px;
+    margin-bottom: 60px;
+}
+
+.banner .title a {
+    padding: 0.5em 1.5em; 
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.2);
+    outline-style: none;
+    color: #fff;
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+.banner .title a:hover {
+    color: #467b63;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.banner .side-bar {
+    z-index: 10;
+    position: absolute;
+    width: 6%;
+    height: 100%;
+    top: 0;
+    right: 0; 
+}
+
+.banner .side-bar::before {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 1px;
+    background: #fff;
+    opacity: 0.6;
+}
+
+.banner .side-bar .menu-bar {
+    height: 12%;
+    background: url(../images/menu.png) no-repeat;
+    background-position: center;
+    background-size: 25px;
+    cursor: pointer;
+}
+
+.banner .side-bar .menu-bar.active {
+    background: url(../images/close.png) no-repeat;
+}
+
+.banner .side-bar .sci-icon {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.banner .side-bar .sci-icon::before {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 12%;
+    height: 1px;
+    width: 100%;
+    background: #fff;
+    opacity: 0.6;
+}
+
+.banner .side-bar .sci-icon ul {
+    list-style: none;
+    text-align: center;
+    transform: translateY(-50%)
+}
+
+.banner .side-bar .sci-icon ul li {
+    margin-bottom: -25px;
+}
+
+.banner .side-bar .sci-icon ul a {
+    text-align: center;
+}
+
+.banner .side-bar .sci-icon ul a img {
+    transform: scale(0.35);
+    filter: invert(0.2);
+    transition: all 0.4s ease-in-out;
+}
+
+.banner .side-bar .sci-icon ul a img:hover {
+    filter: invert(0);
+    transform: scale(0.5);
+}
+
+.banner .cloud {
+    position: absolute;
+    left: -50px;
+    pointer-events: none;
+}
+
+.banner .cloud img {
+    transform: scale(0.1);
+    animation: cloud 6s linear infinite;
+    pointer-events: none;
+}
+
+.banner .boat {
+    position: absolute;
+    bottom: 0;
+    left: 70vw;
+    pointer-events: none;
+}
+
+.banner .boat img {
+    transform: scale(0.8) rotate(30deg);
+    animation: boat 10s linear infinite;
+    pointer-events: none;
+}
+
+.banner .bottom-bar {
+    position: absolute;
+    bottom: 0;
+    right: 10%;
+    width: 80%;
+    height: 32vh;
+    background: linear-gradient(to top, rgba(255,255,255, 0.3), rgba(255,255,255, 0.1));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner .bottom-bar .item {
+    padding-top: 20px;
+    transition: all 0.5s ease-in-out;
+    width: 25%;
+    height: 100%;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.banner .bottom-bar .item:not(:first-child)::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10%;
+    width: 1px;
+    height: 80%;
+    background: #fff;
+    opacity: 0.6;
+}
+
+.banner .bottom-bar .item::after {
+    content: '';
+    position: absolute;
+    left: 10%;
+    bottom: 20%;
+    width: 80%;
+    height: 1px;
+    background: #fff;
+    opacity: 0.6;
+}
+
+.banner .bottom-bar .item .img-box {
+    width: 100%;
+    height: 55%;
+    transition: all 0.5s ease-in-out;
+}
+
+
+.banner .bottom-bar .item:hover .img-box {
+    height: 65%;
+}
+
+.banner .bottom-bar .item .img-box img {
+    width: 90%;
+    height: 100%;
+    border-radius: 10px;
+    opacity: 0.7;
+    object-fit: cover;
+    transition: all 0.5s ease-in-out;
+}
+
+
+.banner .bottom-bar .item:hover .img-box img {
+    opacity: 1;
+}
+
+.banner .bottom-bar .item .hover-bar {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 3px;
+    background: #fff;
+    top: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    visibility: hidden;
+    border-radius: 20px;
+    transition: all 0.5s ease-in-out;
+}
+
+.banner .bottom-bar .item:hover .hover-bar {
+    opacity: 1;
+    visibility: visible;
+}
+
+.banner .bottom-bar .item:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.banner .bottom-bar .item p {
+    transition: all 0.5s ease-in-out;
+    color: #fff;
+    opacity: 0.7;
+    margin: 0 0 15px 0;
+    letter-spacing: 1px;
+    font-size: 1.2em;
+}
+
+.banner .bottom-bar .item a {
+    position: absolute;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1em;
+    letter-spacing: 1px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 7%;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease-in-out;
+}
+
+.banner .bottom-bar .item:hover a {
+    opacity: 1;
+    visibility: visible;
+}
+
+.banner .bottom-bar .item:hover p {
+    transform: translateY(-50%);
+    opacity: 1;
+}
+
+.banner .bottom-bar .item:hover .img-box {
+    transform: translateY(-10%);
+}
+
+@keyframes cloud {
+    0% {
+        transform: translateX(-30vw) scale(0.8);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.3;
+    }
+    30% {
+        opacity: 0.25;
+    }
+    50% {
+        opacity: 0.2;
+    }
+    70% {
+        opacity: 0.1;
+    }
+    100% {
+        transform: translateX(30vw) scale(0.4);
+        opacity: 0;
+    }
+}
+
+@keyframes boat {
+    0% {
+        transform: rotateY(1deg) translateY(20vh) scale(0.8);
+    }
+    20% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+    70% {
+        opacity: 0.5;
+    }
+    100% {
+        transform: rotateY(40deg) translateY(-30vh) scale(0.5);
+    }
+}
+
+

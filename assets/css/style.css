@@ -117,7 +117,7 @@ body {
     text-decoration: none;
     color: #fff;
     font-size: 2.5em;
-    font-weight: 600; 
+    font-weight: 600;
     letter-spacing: 2px;
     font-family: var(--fontBauh);
 }
@@ -182,7 +182,7 @@ body {
 }
 
 .banner .title a {
-    padding: 0.5em 1.5em; 
+    padding: 0.5em 1.5em;
     text-decoration: none;
     border: 1px solid rgba(255, 255, 255, 0.2);
     background: rgba(255, 255, 255, 0.2);
@@ -207,7 +207,7 @@ body {
     width: 6%;
     height: 100%;
     top: 0;
-    right: 0; 
+    right: 0;
 }
 
 .banner .side-bar::before {
@@ -308,7 +308,7 @@ body {
     right: 10%;
     width: 80%;
     height: 32vh;
-    background: linear-gradient(to top, rgba(255,255,255, 0.3), rgba(255,255,255, 0.1));
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
     display: flex;
     justify-content: center;
     align-items: center;
@@ -437,18 +437,23 @@ body {
         transform: translateX(-30vw) scale(0.8);
         opacity: 0;
     }
+
     10% {
         opacity: 0.3;
     }
+
     30% {
         opacity: 0.25;
     }
+
     50% {
         opacity: 0.2;
     }
+
     70% {
         opacity: 0.1;
     }
+
     100% {
         transform: translateX(30vw) scale(0.4);
         opacity: 0;
@@ -459,18 +464,84 @@ body {
     0% {
         transform: rotateY(1deg) translateY(20vh) scale(0.8);
     }
+
     20% {
         opacity: 1;
     }
+
     50% {
         opacity: 0.7;
     }
+
     70% {
         opacity: 0.5;
     }
+
     100% {
         transform: rotateY(40deg) translateY(-30vh) scale(0.5);
     }
 }
 
+@media (max-width: 768px) {
+    .banner .nav {
+        width: 88%;
+        padding: 0;
+    }
 
+    .banner .nav .logo {
+        margin-left: 3.5em;
+    }
+
+    .banner .nav .menu {
+        visibility: hidden;
+    }
+
+    .banner .side-bar {
+        width: 12%;
+    }
+
+    .banner .title {
+        align-items: start;
+        margin-left: 3.5em;
+    }
+
+    .banner .title h1 {
+        font-size: 3em;
+    }
+
+    .banner .title p {
+        font-size: 1em;
+        max-width: 200px;
+        margin-bottom: 20px;
+    }
+
+    .banner .title a {
+        padding: 0.2em 0.5em;
+        font-size: 1em;
+    }
+
+    .banner .bottom-bar {
+        display: flex;
+        flex-wrap: wrap;
+        right: 16%;
+        z-index: 2001;
+        bottom: 120px;
+    }
+
+    .banner .bottom-bar .item {
+        width: 50%;
+        height: 65%;
+    }
+
+    .banner .bottom-bar .item::after {
+        bottom: 12%;
+    }
+
+    .banner .bottom-bar .item:nth-child(3)::before {
+        display: none;
+    }
+
+    .banner .bottom-bar .item:hover a {
+        bottom: 2%;
+    }
+}
